@@ -10,6 +10,7 @@ function createAddToGroupButton() {
   button.setAttribute("role", "button");
   button.className = "css-175oi2r r-1777fci r-bt1l66 r-bztko3 r-lrvibr r-1loqt21 r-1ny4l3l"; // Button classes
   button.setAttribute("type", "button");
+  button.setAttribute("title", "Add to Group");
 
   // Inner div for SVG icon and text
   const innerDiv = document.createElement("div");
