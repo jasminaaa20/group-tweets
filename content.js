@@ -23,6 +23,10 @@ function createAddToGroupButton() {
   const iconDiv = document.createElement("div");
   iconDiv.className = "css-175oi2r r-xoduu5";
 
+  const redDiv = document.createElement("div");
+  redDiv.className = "css-175oi2r r-xoduu5 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-1niwhzg r-sdzlij r-xf4iuw r-o7ynqc r-6416eg r-1ny4l3l";
+  iconDiv.appendChild(redDiv);
+
   // SVG icon
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("viewBox", "0 0 24 24");
