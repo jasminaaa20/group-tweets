@@ -81,7 +81,8 @@ function openGroupPopup() {
 // Function to inject the "Add to Group" button next to the like button
 function injectAddToGroupButton() {
   document.querySelectorAll('article[data-testid="tweet"]').forEach(tweet => {
-      const likeButton = tweet.querySelector('button[data-testid="like"]');
+      // Check for both like and unlike buttons
+      const likeButton = tweet.querySelector('button[data-testid="like"], button[data-testid="unlike"]');
       
       // Ensure the button isn’t already added to avoid duplicates
       if (likeButton && !tweet.querySelector(".add-to-group-button")) {
