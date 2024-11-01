@@ -37,10 +37,7 @@ function createAddToGroupButton() {
 
   // New SVG path for a plus icon
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  // Set the path for a plus icon
   path.setAttribute("d", "M9.5 4.5v15M2 12h15"); // Vertical and horizontal lines crossing at center
-
-  // Optionally, you could add stroke attributes for finer control over line appearance
   path.setAttribute("fill", "none"); // Ensure it's not filled
   path.setAttribute("stroke", "currentColor"); // Use current color for the icon
   path.setAttribute("stroke-width", "2"); // Set the stroke width for visibility
@@ -53,14 +50,29 @@ function createAddToGroupButton() {
   const textDiv = document.createElement("div");
   textDiv.className = "css-175oi2r r-xoduu5 r-1udh08x";
 
-  // Span for text
-  const textSpan = document.createElement("span");
-  textSpan.className = "css-1jxf684 r-1ttztb7 r-qvutc0 r-poiln3 r-n6v787 r-1cwl3u0 r-n7gxbd r-11pglpa r-1yz1tyy r-1noe1sz";
-  textSpan.style.textOverflow = "unset";
-  textSpan.textContent = "Add";
+  // Span with transition container for text
+  const transitionSpan = document.createElement("span");
+  transitionSpan.setAttribute("data-testid", "app-text-transition-container");
+  transitionSpan.style.transitionProperty = "transform";
+  transitionSpan.style.transitionDuration = "0.3s";
+  transitionSpan.style.transform = "translate3d(0px, 0px, 0px)";
+
+  // Nested spans for "Add" text with proper classes
+  const outerTextSpan = document.createElement("span");
+  outerTextSpan.className = "css-1jxf684 r-1ttztb7 r-qvutc0 r-poiln3 r-n6v787 r-1cwl3u0 r-1k6nrdp";
+  outerTextSpan.style.textOverflow = "unset";
+
+  const innerTextSpan = document.createElement("span");
+  innerTextSpan.className = "css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3";
+  innerTextSpan.style.textOverflow = "unset";
+  innerTextSpan.textContent = "Add";
+
+  // Assemble the nested spans
+  outerTextSpan.appendChild(innerTextSpan);
+  transitionSpan.appendChild(outerTextSpan);
+  textDiv.appendChild(transitionSpan);
 
   // Append everything together
-  textDiv.appendChild(textSpan);
   innerDiv.appendChild(iconDiv);
   innerDiv.appendChild(textDiv);
   button.appendChild(innerDiv);
