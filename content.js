@@ -38,7 +38,7 @@ function createAddToGroupButton() {
   // New SVG path for a plus icon
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   // Set the path for a plus icon
-  path.setAttribute("d", "M12 5v14M5 12h14"); // Vertical and horizontal lines crossing at center
+  path.setAttribute("d", "M9.5 4.5v15M2 12h15"); // Vertical and horizontal lines crossing at center
 
   // Optionally, you could add stroke attributes for finer control over line appearance
   path.setAttribute("fill", "none"); // Ensure it's not filled
