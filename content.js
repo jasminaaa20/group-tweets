@@ -6,7 +6,7 @@
 function createAddToGroupButton() {
   // Main button wrapper div with button-specific classes
   const buttonDiv = document.createElement("div");
-  buttonDiv.className = "css-175oi2r r-18u37iz r-1h0z5md r-13awgt0";
+  buttonDiv.className = "css-175oi2r r-18u37iz r-1h0z5md r-13awgt0 add-to-group-button";
 
   // Button element with attributes and styling classes
   const button = document.createElement("button");
@@ -109,7 +109,6 @@ function injectAddToGroupButton() {
       
       if (likeButton && !tweet.querySelector(".add-to-group-button")) {
           const addToGroupButton = createAddToGroupButton();
-          addToGroupButton.classList.add("add-to-group-button");
           likeButton.parentNode.insertAdjacentElement("afterend", addToGroupButton); // Insert after the like button
       }
   });
