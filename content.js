@@ -1,6 +1,8 @@
-// content.js
-
-// Function to create the "Add to Group" button with an optimized structure
+/**
+ * Creates the "Add to Group" button with an optimized structure.
+ *
+ * @returns {HTMLElement} The created button element.
+ */
 function createAddToGroupButton() {
   // Main button wrapper div with button-specific classes
   const buttonDiv = document.createElement("div");
@@ -86,12 +88,21 @@ function createAddToGroupButton() {
   return buttonDiv;
 }
 
-// Function to open the popup for adding to a group
+
+/**
+ * Opens the "Add to Group" popup for the user to select a group
+ * from their saved groups or enter a new group name.
+ */
 function openGroupPopup() {
   alert("Add to Group popup would appear here.");
 }
 
-// Function to inject the "Add to Group" button next to the like button
+
+/**
+ * Injects the "Add to Group" button after the like button in each
+ * visible tweet element. If the tweet element already has the
+ * "Add to Group" button, it does nothing.
+ */
 function injectAddToGroupButton() {
   document.querySelectorAll('article[data-testid="tweet"]').forEach(tweet => {
       const likeButton = tweet.querySelector('button[data-testid="like"], button[data-testid="unlike"]');
