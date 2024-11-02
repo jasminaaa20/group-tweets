@@ -1,15 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "X Group Saver",
+  "name": "Group Tweets",
   "version": "1.0",
   "description": "Add tweets to custom groups on X.",
   "permissions": ["activeTab", "storage"],
-  "action": {
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
-      "matches": ["https://x.com/*"],
+      "matches": ["*://x.com/*"],
       "js": ["content.js"]
     }
   ],
