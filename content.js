@@ -83,12 +83,19 @@ function injectAddToGroupButton() {
   document.querySelectorAll('article[data-testid="tweet"]').forEach(tweet => {
       // Check for both like and unlike buttons
       const likeButton = tweet.querySelector('button[data-testid="like"], button[data-testid="unlike"]');
+
+      // copy like button element to create a new button
+      const likeButtonCopy = likeButton.cloneNode(true);
+
+      // Set the aria-label attribute to "Add to Group"
+      likeButtonCopy.setAttribute("aria-label", "Add to Group");
+      likeButtonCopy.setAttribute("title", "Add to Group");
       
       // Ensure the button isn’t already added to avoid duplicates
       if (likeButton && !tweet.querySelector(".add-to-group-button")) {
-          const addToGroupButton = createAddToGroupButton();
-          addToGroupButton.classList.add("add-to-group-button");
-          likeButton.parentNode.insertAdjacentElement("afterend", addToGroupButton); // Insert after the like button
+          // const addToGroupButton = createAddToGroupButton();
+          likeButtonCopy.classList.add("add-to-group-button");
+          likeButton.parentNode.insertAdjacentElement("afterend", likeButtonCopy); // Insert after the like button
       }
   });
 }
