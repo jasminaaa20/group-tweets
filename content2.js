@@ -37,7 +37,12 @@ function createDynamicAddToGroupButton(likeButton) {
   // Add click event for the new button
   addToGroupButton.addEventListener("click", openGroupPopup);
 
-  return addToGroupButton;
+  const buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("css-175oi2r", "r-18u37iz", "r-1h0z5md", "r-13awgt0");
+
+  buttonDiv.appendChild(addToGroupButton);
+
+  return buttonDiv;
 }
 
 // Function to open the popup for adding to a group
