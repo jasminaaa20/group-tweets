@@ -16,7 +16,7 @@ function createDynamicAddToGroupButton(likeButton) {
 
     // New SVG path for a plus icon
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", "M12 5v14M5 12h14"); // Vertical and horizontal lines crossing at center
+    path.setAttribute("d", "M12 3.5v17M3.5 12h17"); // Vertical and horizontal lines crossing at center
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", "currentColor");
     path.setAttribute("stroke-width", "2");
@@ -57,8 +57,8 @@ function injectAddToGroupButton() {
 
     // Ensure the button isn’t already added to avoid duplicates
     if (likeButton && !tweet.querySelector("[data-testid='add-to-group']")) {
-      const addToGroupButton = createDynamicAddToGroupButton(likeButton);
-      likeButton.parentNode.insertAdjacentElement("afterend", addToGroupButton); // Insert after the like button
+      const addToGroupButtonDiv = createDynamicAddToGroupButton(likeButton);
+      likeButton.parentNode.insertAdjacentElement("afterend", addToGroupButtonDiv); // Insert after the like button
     }
   });
 }
