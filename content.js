@@ -17,9 +17,16 @@ function createDynamicAddToGroupButton(likeButton) {
     svg.appendChild(createPlusIconG());
   }
 
-  const textSpan = addToGroupButton.querySelector("span span span");
-  if (textSpan) {
-    textSpan.textContent = "Add";
+  const textOuterSpan = addToGroupButton.querySelector("span span");
+  if (textOuterSpan) {
+    let textSpan = textOuterSpan.querySelector("span");
+    if (textSpan) {
+      textSpan.textContent = "Add";
+    }
+    else {
+      textSpan = createTextSpan("Add");
+      textOuterSpan.appendChild(textSpan);
+    }
   }
 
   const contentDiv = addToGroupButton.querySelector('div[dir="ltr"]');
@@ -60,6 +67,27 @@ function createPlusIconG() {
   g.appendChild(path);
 
   return g;
+}
+
+/**
+ * Creates an HTML <span> element with the given text and the same
+ * appearance as the text in the Like button. The element is intended
+ * to be used as the text of the "Add to Group" button.
+ * @param {string} text The text to display in the created <span> element.
+ * @returns {HTMLSpanElement} The created <span> element.
+ */
+function createTextSpan(text) {
+  const textSpan = document.createElement("span");
+  textSpan.classList.add(
+    "css-1jxf684",
+    "r-bcqeeo",
+    "r-1ttztb7",
+    "r-qvutc0",
+    "r-poiln3"
+  );
+  textSpan.style.textOverflow = "unset";
+  textSpan.textContent = text;
+  return textSpan;
 }
 
 function openGroupPopup() {
