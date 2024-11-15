@@ -37,7 +37,7 @@ function createDynamicAddToGroupButton(likeButton) {
   // Modify the "dir='ltr'" div to set a fixed color
   const innerDiv = addToGroupButton.querySelector('div[dir="ltr"]');
   if (innerDiv) {
-    innerDiv.style.color = "rgb(29, 155, 240)"; // Set a fixed blue color for the "Add to Group" button
+    innerDiv.style.color = "rgb(113, 118, 123)"; // Set a fixed blue color for the "Add to Group" button
   }
 
   // Add click event for the new button
