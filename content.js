@@ -21,12 +21,9 @@ function createDynamicAddToGroupButton(likeButton) {
     svg.appendChild(g);
   }
 
-  const textSpan = addToGroupButton.querySelector("span[data-testid='app-text-transition-container']");
+  const textSpan = addToGroupButton.querySelector("span[data-testid='app-text-transition-container'] span span");
   if (textSpan) {
-    textSpan.innerHTML = `
-      <span class="css-1jxf684 r-1ttztb7 r-qvutc0 r-poiln3 r-n6v787 r-1cwl3u0 r-1k6nrdp r-n7gxbd" style="text-overflow: unset;">
-        <span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3" style="text-overflow: unset;">Add</span>
-      </span>`;
+    textSpan.textContent = "Add";
   }
 
   const innerDiv = addToGroupButton.querySelector('div[dir="ltr"]');
