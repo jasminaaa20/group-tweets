@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": ["*://x.com/*"],
-      "js": ["content2.js"]
+      "js": ["content.js"]
     }
   ],
   "icons": {
