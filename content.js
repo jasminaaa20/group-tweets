@@ -1,3 +1,5 @@
+import { CSS_CLASSES, COLORS } from "./const";
+
 /**
  * Creates a new "Add to Group" button by cloning and modifying the Like button.
  * @param {HTMLElement} likeButton - The existing Like button element to clone.
@@ -32,18 +34,13 @@ function createDynamicAddToGroupButton(likeButton) {
 
   const contentDiv = addToGroupButton.querySelector('div[dir="ltr"]');
   if (contentDiv) {
-    contentDiv.style.color = "rgb(113, 118, 123)";
+    contentDiv.style.color = COLORS.neutral;
   }
 
   addToGroupButton.addEventListener("click", openGroupPopup);
 
   const buttonDiv = document.createElement("div");
-  buttonDiv.classList.add(
-    "css-175oi2r", 
-    "r-18u37iz", 
-    "r-1h0z5md", 
-    "r-13awgt0"
-  );
+  buttonDiv.classList.add(...CSS_CLASSES.buttonWrapper);
   buttonDiv.appendChild(addToGroupButton);
 
   return buttonDiv;
@@ -79,13 +76,7 @@ function createPlusIconG() {
  */
 function createTextSpan(text) {
   const textSpan = document.createElement("span");
-  textSpan.classList.add(
-    "css-1jxf684",
-    "r-bcqeeo",
-    "r-1ttztb7",
-    "r-qvutc0",
-    "r-poiln3"
-  );
+  textSpan.classList.add(...CSS_CLASSES.textSpan);
   textSpan.style.textOverflow = "unset";
   textSpan.textContent = text;
   return textSpan;
