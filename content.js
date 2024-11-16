@@ -1,5 +1,3 @@
-import { CSS_CLASSES, COLORS } from "./const";
-
 /**
  * Creates a new "Add to Group" button by cloning and modifying the Like button.
  * @param {HTMLElement} likeButton - The existing Like button element to clone.
@@ -117,3 +115,19 @@ function observeAndInjectButtons() {
 }
 
 observeAndInjectButtons();
+
+const CSS_CLASSES = {
+  buttonWrapper: ["css-175oi2r", "r-18u37iz", "r-1h0z5md", "r-13awgt0"],
+  textSpan: [
+    "css-1jxf684",
+    "r-bcqeeo",
+    "r-1ttztb7",
+    "r-qvutc0",
+    "r-poiln3"
+  ],
+};
+
+const COLORS = {
+  neutral: "rgb(113, 118, 123)", // Gray color
+  active: "rgb(29, 155, 240)",   // Blue color
+};

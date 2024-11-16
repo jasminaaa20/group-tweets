@@ -6,9 +6,8 @@
   "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
-      "matches": ["*://x.com/*"],
-      "js": ["content.js"],
-      "type": "module"
+      "matches": ["*://*.x.com/*"],
+      "js": ["content.js"]
     }
   ],
   "icons": {
