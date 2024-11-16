@@ -60,7 +60,7 @@ function createPlusIconG() {
   const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("d", "M10 3.5v17M1.5 12h17");
+  path.setAttribute("d", "M9 3.5v17M0.5 12h17");
   path.setAttribute("fill", "none");
   path.setAttribute("stroke", "currentColor");
   path.setAttribute("stroke-width", "2");
